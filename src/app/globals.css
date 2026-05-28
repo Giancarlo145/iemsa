@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8F9FA;
+  --foreground: #1E293B;
+  --iemsa-dark: #0F172A;
+  --iemsa-green: #059669;
+  --iemsa-gold: #D97706;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-iemsa-dark: var(--iemsa-dark);
+  --color-iemsa-green: var(--iemsa-green);
+  --color-iemsa-gold: var(--iemsa-gold);
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Estilo premium para las barras de scroll */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Animación para marquesina de logos infinitos */
+@utility animate-infinite-scroll {
+  animation: infinite-scroll 35s linear infinite;
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
