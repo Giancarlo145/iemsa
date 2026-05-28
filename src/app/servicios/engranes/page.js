@@ -28,32 +28,57 @@ export default function EngranesPage() {
       <Navbar />
 
       {/* HERO SUBPÁGINA */}
-      <section className="relative py-20 bg-gradient-to-b from-[#F8F9FA] to-white border-b border-[#1E293B]/5 overflow-hidden">
-        <div className="absolute right-[-10%] top-[-10%] w-[400px] h-[400px] text-[#059669]/5 pointer-events-none select-none">
-          <Settings className="w-full h-full animate-[spin_50s_linear_infinite]" />
-        </div>
+      <section className="relative py-20 lg:py-28 bg-[#F8F9FA] border-b border-[#1E293B]/5 overflow-hidden">
+        {/* Cuadrícula de ingeniería de fondo */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35 pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-semibold uppercase tracking-wider mb-6">
-              <span>Capacidades de Manufactura</span>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0F172A] leading-tight mb-6">
-              Fabricación y Generado de <span className="text-[#059669]">Engranes de Alta Precisión</span>
-            </h1>
-            
-            <p className="text-lg text-[#1E293B]/80 leading-relaxed mb-8">
-              Somos especialistas en la manufactura de engranes industriales de todo tipo, bajo normas de calidad AGMA y tolerancias micrométricas estrechas. Fabricamos a partir de muestras físicas (ingeniería inversa) o planos de diseño.
-            </p>
-
-            <a
-              href="#cotizar-engrane"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-sm font-semibold text-white bg-[#059669] hover:bg-[#047857] shadow-md hover:shadow-lg transition-all"
+            {/* Columna Izquierda: Textos y Botones */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col justify-center"
             >
-              Cotizar Engranes a Medida
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/10 text-[#059669] text-xs font-semibold uppercase tracking-wider mb-6 w-fit">
+                <span>Capacidades de Manufactura</span>
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0F172A] leading-tight mb-6">
+                Fabricación y Generado de <span className="text-[#059669]">Engranes de Alta Precisión</span>
+              </h1>
+              
+              <p className="text-lg text-[#1E293B]/80 leading-relaxed mb-8">
+                Somos especialistas en la manufactura de engranes industriales de todo tipo, bajo normas de calidad AGMA y tolerancias micrométricas estrechas. Fabricamos a partir de muestras físicas (ingeniería inversa) o planos de diseño.
+              </p>
+
+              <div>
+                <a
+                  href="#cotizar-engrane"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-sm font-semibold text-white bg-[#059669] hover:bg-[#047857] shadow-md hover:shadow-lg transition-all"
+                >
+                  Cotizar Engranes a Medida
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Columna Derecha: Imagen del Engrane */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] xl:aspect-square"
+            >
+              <img 
+                src="/imagenes/engranes.jpg" 
+                alt="Engranes industriales IEMSA de precisión" 
+                className="w-full h-full object-cover rounded-2xl shadow-lg border border-[#1E293B]/10"
+              />
+            </motion.div>
+
           </div>
         </div>
       </section>
