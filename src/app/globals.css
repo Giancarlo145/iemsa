@@ -52,3 +52,17 @@ body {
     transform: translateX(-100%);
   }
 }
+
+/* Animación para el giro del sinfín del logotipo */
+@utility animate-sinfin-scroll {
+  animation: sinfin-scroll 1.2s linear infinite;
+}
+
+@keyframes sinfin-scroll {
+  from {
+    transform: translateX(-16px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

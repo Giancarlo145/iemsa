@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Settings } from "lucide-react";
+import IemsaLogo from "@/components/IemsaLogo";
 
 export default function Footer() {
   return (
@@ -10,10 +10,8 @@ export default function Footer() {
           
           {/* Marca / Descripción */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 bg-white/10 rounded-lg text-[#D97706]">
-                <Settings className="w-5 h-5" />
-              </div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <IemsaLogo className="w-10 h-10" dark={true} />
               <span className="text-lg font-bold tracking-tight text-white">
                 IEMSA<span className="text-[#059669]">.</span>
               </span>

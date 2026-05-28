@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Settings, Menu, X, ChevronDown } from "lucide-react";
+import IemsaLogo from "@/components/IemsaLogo";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,10 +39,7 @@ export default function Navbar() {
           
           {/* Logotipo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 bg-[#0F172A] rounded-lg text-[#D97706] shadow-sm transition-transform group-hover:scale-105">
-              <Settings className="w-6 h-6 animate-[spin_25s_linear_infinite]" />
-              <div className="absolute w-2.5 h-2.5 bg-[#059669] rounded-full"></div>
-            </div>
+            <IemsaLogo className="w-12 h-12 transition-transform group-hover:scale-105" />
             <span className="text-xl font-bold tracking-tight text-[#0F172A]">
               IEMSA<span className="text-[#059669]">.</span>
             </span>
