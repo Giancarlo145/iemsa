@@ -32,7 +32,7 @@ export default function ContactoPage() {
   const mapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Moldeadores 318, Pro-Hogar, Azcapotzalco, CDMX, 02600")}`;
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-clip flex flex-col">
       <Navbar />
 
       {/* HERO CONTACTO */}

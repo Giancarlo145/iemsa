@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -21,6 +21,16 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Ajustar la velocidad de reproducción del video (0.6 = 60% de la velocidad original)
+      // Modifica este valor (por ejemplo: 0.5 para más lento, 1.0 para normal)
+      videoRef.current.playbackRate = 0.4;
+    }
+  }, []);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -37,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-clip flex flex-col">
       <Navbar />
 
       {/* HERO SECTION */}
@@ -45,18 +55,19 @@ export default function Home() {
 
         {/* 1. Video de Fondo (Z-Index 0) */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="absolute -top-[8px] inset-x-0 w-full h-[calc(100%+16px)] object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/video-hero.webm" type="video/webm" />
           Tu navegador no soporta el formato de video.
         </video>
 
         {/* 2. Capa de superposición esmerilada (Z-Index 10) */}
-        <div className="absolute inset-0 bg-white/40  z-10"></div>
+        <div className="absolute inset-0 bg-white/40 z-10"></div>
 
         {/* 3. Capa de Contenido (Z-Index 20) */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
@@ -75,7 +86,7 @@ export default function Home() {
               IEMSA: Ingeniería de Precisión en <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0F172A] to-[#059669]">Engranes y Maquinados</span> Industriales
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#1E293B]/80 leading-relaxed max-w-2xl mb-10">
+            <p className="text-lg sm:text-xl text-[#0F172A] font-medium leading-relaxed max-w-2xl mb-10">
               Soluciones de alta calidad a la medida para la industria pesada y de manufactura. Diseñamos, maquinamos y recuperamos componentes con la más estricta tolerancia micrométrica del mercado.
             </p>
 

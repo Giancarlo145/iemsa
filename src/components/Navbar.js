@@ -10,6 +10,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   // Cerrar menús al cambiar de ruta
@@ -17,6 +18,19 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
   }, [pathname]);
+
+  // Event listener para detectar scroll y suavizar opacidad
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Inicio", href: "/" },
@@ -33,7 +47,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8F9FA]/90 backdrop-blur-md border-b border-[#1E293B]/5">
+    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      isScrolled 
+        ? "bg-[#F8F9FA]/65 backdrop-blur-lg border-[#1E293B]/10 shadow-sm" 
+        : "bg-[#F8F9FA]/90 backdrop-blur-md border-[#1E293B]/5"
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           

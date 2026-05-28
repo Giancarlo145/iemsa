@@ -23,7 +23,7 @@ export default function DoblezPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-[#F8F9FA] text-[#1E293B] font-sans antialiased overflow-x-clip flex flex-col">
       <Navbar />
 
       {/* HERO DOBLEZ */}
