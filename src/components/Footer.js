@@ -12,8 +12,8 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
               <IemsaLogo className="w-10 h-10" dark={true} />
-              <span className="text-lg font-bold tracking-tight text-white">
-                IEMSA<span className="text-[#059669]">.</span>
+              <span className="text-lg font-bold tracking-tight text-[#059669]">
+                IEMSA<span className="text-[#D97706]">.</span>
               </span>
             </Link>
             <p className="text-xs text-white/50 leading-relaxed">

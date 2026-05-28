@@ -40,8 +40,8 @@ export default function Navbar() {
           {/* Logotipo */}
           <Link href="/" className="flex items-center gap-3 group">
             <IemsaLogo className="w-12 h-12 transition-transform group-hover:scale-105" />
-            <span className="text-xl font-bold tracking-tight text-[#0F172A]">
-              IEMSA<span className="text-[#059669]">.</span>
+            <span className="text-xl font-bold tracking-tight text-[#059669]">
+              IEMSA<span className="text-[#D97706]">.</span>
             </span>
           </Link>
 
